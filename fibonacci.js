@@ -29,5 +29,4 @@ function displayFibonacciRecursive(n) {
   console.log(resultArray);
 }
 
-console.log(fibs(100));
-displayFibonacciRecursive(10);
+export {fibs, fibonacciRecursive, displayFibonacciRecursive} ;
