@@ -1,25 +1,33 @@
+// The iterative approach
 function fibs(num) {
-  let arr = [0,1];
+  let arr = [0, 1];
   if (num === 1) {
     return (arr = [0]);
   } else if (num === 2) {
     return (arr = [0, 1]);
   } else if (num > 2) {
     for (let i = 2; i < num; i++) {
-        arr.push(arr[i-2] + arr[i-1]);
+      arr.push(arr[i - 2] + arr[i - 1]);
     }
-    return arr
+    return arr;
   }
 }
 
-console.log(fibs(8));
-
-function fibsRec(n) {
-  // Base case: return n if n is 0 or 1
-  if (n === 0 || n === 1) {
+// The recursive approach
+function fibonacciRecursive(n) {
+  if (n <= 1) {
     return n;
   }
-  // Recursive case: sum of the two preceding numbers
-  return fibsRec(n - 1) + fibsRec(n - 2);
+  return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
 }
 
+function displayFibonacciRecursive(n) {
+  let resultArray = [];
+  for (let i = 0; i < n; i++) {
+    resultArray[i] = fibonacciRecursive(i);
+  }
+  console.log(resultArray);
+}
+
+console.log(fibs(100));
+displayFibonacciRecursive(10);
